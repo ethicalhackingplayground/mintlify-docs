@@ -1,0 +1,51 @@
+---
+title: Google Dorks
+description: "In this page we explain what google dorks are."
+---
+
+**Google Dorks Explained**
+
+Google Dorks, also known as Google hacking or Google search operators, are specific search queries that utilize advanced search techniques to find information that is not readily accessible through traditional searches. These queries can be used to uncover sensitive data, vulnerabilities, and other valuable information on the internet. Google Dorks are typically used by security professionals, hackers, and researchers to perform reconnaissance and gather intelligence about a target.
+
+### Syntax and Operators:
+
+Google Dorks utilize special operators and syntax to refine search results. Some common operators include:
+
+- **site:** - Limits the search to a specific website or domain.
+- **intitle:** - Searches for pages with a specific word or phrase in the title.
+- **inurl:** - Searches for pages with a specific word or phrase in the URL.
+- **filetype:** - Limits results to specific file types (e.g., PDF, DOC, XLS).
+- **related:** - Finds sites related to a specific URL.
+- **cache:** - Retrieves the cached version of a webpage.
+- **link:** - Finds pages that link to a specific URL.
+- **info:** - Provides information about a specific URL.
+- **define:** - Provides the definition of a word or phrase.
+
+### Examples:
+
+1. **Finding Login Pages**: `intitle:"login" site:example.com`
+   This dork searches for login pages within the specified website.
+
+2. **Finding Vulnerable WordPress Sites**: `inurl:/wp-content/uploads/wp-backup-plus/`
+   This dork searches for vulnerable WordPress sites that have the WP Backup Plus plugin installed.
+
+3. **Finding Open FTP Servers**: `intitle:"index of" inurl:ftp`
+   This dork searches for FTP servers with directory listings accessible via the web.
+
+4. **Finding Sensitive Documents**: `filetype:pdf intext:"confidential" site:example.com`
+   This dork searches for PDF documents containing the word "confidential" within the specified website.
+
+5. **Finding Vulnerable Webcams**: `inurl:/view.shtml`
+   This dork searches for webcams that are publicly accessible and have the specific URL structure.
+
+### Different Search Engines:
+
+While Google is the most popular search engine for utilizing dorks, other search engines like Bing and DuckDuckGo also support similar syntax with slight differences. For example:
+
+- **Bing**: Bing supports operators like `site:`, `inurl:`, `intitle:`, but with slightly different syntax. For instance, the `intitle:` operator in Bing is replaced with `allintitle:`.
+
+- **DuckDuckGo**: DuckDuckGo provides limited support for search operators compared to Google and Bing. It mainly focuses on privacy and doesn't allow for as detailed searches with operators as Google does.
+
+### Conclusion:
+
+Google Dorks are powerful tools for uncovering valuable information on the internet. However, it's essential to use them responsibly and ethically, as improper use can lead to legal consequences. Additionally, website owners should be aware of the potential vulnerabilities exposed by Google Dorks and take measures to protect their sensitive data.

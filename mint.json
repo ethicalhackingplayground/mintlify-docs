@@ -2,28 +2,28 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/logo/dark-logo.png",
+    "light": "/logo/light-logo.png"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#3b82f6",
+    "light": "#3b82f6",
+    "dark": "#3b82f6",
     "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
+      "from": "#3b82f6",
+      "to": "#3b82f6"
     }
   },
   "topbarLinks": [
     {
       "name": "Support",
-      "url": "mailto:hi@mintlify.com"
+      "url": "mailto:blake@dorki.io"
     }
   ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://dorki.io/dashboard"
   },
   "tabs": [
     {
@@ -35,57 +35,58 @@
     {
       "name": "Documentation",
       "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "url": "https://docs.dorki.io"
     },
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://blog.dorki.io"
     }
   ],
   "navigation": [
     {
       "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
+      "pages": ["introduction", "google-dorks"]
     },
     {
-      "group": "Essentials",
+      "group": "Usage",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "essentials/single-query-dork",
+        "essentials/bulk-dork-search",
+        "essentials/language-translations",
+        "essentials/ai-dork-generator"
       ]
     },
     {
       "group": "API Documentation",
+      "pages": ["api-reference/introduction"]
+    },
+    {
+      "group": "AI Documentation",
+      "pages": ["api-reference/endpoint/ai/post-generate-ai-dorks"]
+    },
+    {
+      "group": "Search Documentation",
       "pages": [
-        "api-reference/introduction"
+        "api-reference/endpoint/get-bulk-dork-search",
+        "api-reference/endpoint/get-google-dork-search"
       ]
     },
     {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
-      ]
+      "group": "Languages Documentation",
+      "pages": ["api-reference/endpoint/get-supported-languages"]
+    },
+    {
+      "group": "Translation Documentation",
+      "pages": ["api-reference/endpoint/post-translate-text"]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+    "twitter": "https://twitter.com/dorkipty"
+  },
+  "api": {
+    "baseUrl": "https://dorki.io",
+    "auth": {}
+  },
+  "openapi": "https://dorki.io/api/doc"
 }

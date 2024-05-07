@@ -1,33 +1,51 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Introduction"
+description: "Communicate with the API endpoints"
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  If you're looking to communicate with the API routes to use in your
+  automation, continue reading until the end.
 </Note>
 
 ## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+Our API is a set of endpoints that can be used to automate common tasks
+outside of the website.
+
+The endpoints can be used to generate AI dorks, bulk Google dork search,
+language translations, and single query dorks. Our API can be easily integrated into various tools and workflows.
+
+Here's a brief description of each endpoint:
+
+- Generate AI dorks: Use this endpoint to generate AI dorks based on a query.
+- Bulk Google dork search: Use this endpoint to search Google for a list of
+  queries based on a give file uploaded through our website.
+- Language translations: Use this endpoint to translate your dorks from one language
+  to another.
+- Single query dorks: Use this endpoint to generate a single query dork based
+  on a query.
 
 <Card
-  title="Plant Store Endpoints"
+  title="API docs"
   icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  href="https://docs.dorki.io/api-reference/endpoint/ai/post-generate-ai-dorks"
 >
-  View the OpenAPI specification file
+  Continue to the API docs
 </Card>
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API endpoints are authenticated using the `__session` JWT token that is given to you from [Clerk](https://clerk.com/) when you sign in.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
+```http
+Cookie: appSession=<JWT>
+```
+
+This is an example curl command:
+
+```bash
+curl --request GET \
+  --url https://dorki.io/api/languages \
+  --header "Cookie: __session=<JWT>
 ```
