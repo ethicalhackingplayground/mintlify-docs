@@ -87,15 +87,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "in": "header",
-            "name": "Authorization",
-            "description": "The authorization token.",
-            "schema": {
-              "type": "string",
-              "format": "JWT"
-            }
           }
         ],
         "responses": {
@@ -204,15 +195,6 @@
             "description": "Additional search criteria.",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "in": "header",
-            "name": "Authorization",
-            "description": "The authorization token.",
-            "schema": {
-              "type": "string",
-              "format": "JWT"
             }
           }
         ],
