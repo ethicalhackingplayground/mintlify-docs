@@ -96,5 +96,5 @@
     "baseUrl": "https://dorki.io",
     "auth": {}
   },
-  "openapi": "https://dorki.io/api/doc"
+  "openapi": "/openapi.json"
 }
