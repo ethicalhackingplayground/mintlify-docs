@@ -1,6 +1,14 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Starter Kit",
+  "metadata": {
+    "og:site_name": "Dorki",
+    "og:title": "Optimize Your Google Dorks with Dorki",
+    "og:image": "https://dorki.io/images/og-image.png",
+    "og:description": "Dorki - Unlock Hidden Assets with Dorki",
+    "og:url": "https://dorki.io/",
+    "og:logo": "https://dorki.io/images/Dorki.png"
+  },
   "logo": {
     "dark": "/logo/dark-logo.png",
     "light": "/logo/light-logo.png"
