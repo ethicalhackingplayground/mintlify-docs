@@ -4,8 +4,8 @@ description: "Communicate with the API endpoints"
 ---
 
 <Note>
-  If you're looking to communicate with the API routes to use in your
-  automation, continue reading until the end.
+  If you're looking to automate tasks or integrate with our API, keep reading
+  for information on how to interact with our endpoints.
 </Note>
 
 ## Welcome
@@ -39,7 +39,7 @@ Here's a brief description of each endpoint:
 All API endpoints are authenticated using the `__session` JWT token that is given to you from [Clerk](https://clerk.com/) when you sign in.
 
 ```http
-Cookie: appSession=<JWT>
+Cookie: __session=<JWT>
 ```
 
 This is an example curl command:
