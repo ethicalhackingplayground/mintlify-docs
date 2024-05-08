@@ -9,6 +9,9 @@
     "og:url": "https://dorki.io/",
     "og:logo": "https://dorki.io/images/Dorki.png"
   },
+  "seo": {
+    "indexHiddenPages": true
+  },
   "logo": {
     "dark": "/logo/dark-logo.png",
     "light": "/logo/light-logo.png"
@@ -29,9 +32,10 @@
       "url": "mailto:blake@dorki.io"
     }
   ],
+
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dorki.io/dashboard"
+    "name": "Get Started",
+    "url": "https://dorki.io/"
   },
   "tabs": [
     {
@@ -90,7 +94,7 @@
     }
   ],
   "footerSocials": {
-    "twitter": "https://twitter.com/dorkipty"
+    "x": "https://x.com/dorkipty"
   },
   "api": {
     "baseUrl": "https://dorki.io",
