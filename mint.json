@@ -84,6 +84,7 @@
         "api-reference/endpoint/get-google-dork-search"
       ]
     },
+
     {
       "group": "Languages Documentation",
       "pages": ["api-reference/endpoint/get-supported-languages"]
@@ -91,6 +92,13 @@
     {
       "group": "Translation Documentation",
       "pages": ["api-reference/endpoint/post-translate-text"]
+    },
+    {
+      "group": "Miscellaneous",
+      "pages": [
+        "api-reference/endpoint/get-download-results",
+        "api-reference/endpoint/get-extract-data"
+      ]
     }
   ],
   "footerSocials": {
@@ -98,7 +106,9 @@
   },
   "api": {
     "baseUrl": "https://dorki.io",
-    "auth": {}
+    "auth": {
+      "method": "bearer"
+    }
   },
   "openapi": "/openapi.json"
 }

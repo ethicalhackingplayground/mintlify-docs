@@ -36,16 +36,28 @@ Here's a brief description of each endpoint:
 
 ## Authentication
 
-All API endpoints are authenticated using the `__session` JWT token that is given to you from [Clerk](https://clerk.com/) when you sign in.
+To access all API endpoints, you must provide a valid Authorization Bearer Token in your request headers.
 
 ```http
-Cookie: __session=<JWT>
+Authorization: Bearer <JWT>
 ```
 
 This is an example curl command:
 
 ```bash
-curl --request GET \
-  --url https://dorki.io/api/languages \
-  --header "Cookie: __session=<JWT>
+curl --url https://dorki.io/api/search?q=site:example.com \
+  --header "Authorization: Bearer <JWT>
 ```
+
+## Video Demonstration
+
+<iframe
+  width={560 * 1.3}
+  height={315 * 1.3}
+  src="https://www.youtube-nocookie.com/embed/ul4W6AAHP-A?si=Y7CxkK6VBsUVw8_f"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>

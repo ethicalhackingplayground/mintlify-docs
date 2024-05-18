@@ -118,6 +118,13 @@
                           "title": {
                             "type": "string",
                             "description": "The title of the search result."
+                          },
+                          "risk_factors": {
+                            "type": "array",
+                            "description": "The risk factors of the search result.",
+                            "items": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
@@ -139,36 +146,6 @@
           },
           "429": {
             "description": "Too Many Requests. Rate limit exceeded."
-          },
-          "500": {
-            "description": "Internal Server Error. Something went wrong on the server side."
-          }
-        }
-      }
-    },
-    "/api/languages": {
-      "get": {
-        "summary": "get supported languages",
-        "description": "This endpoint returns the list of supported languages for dorki.io.\n",
-        "responses": {
-          "200": {
-            "description": "OK. Returns the list of supported languages.",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "languages": {
-                      "type": "array",
-                      "description": "The list of supported languages.",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
-                }
-              }
-            }
           },
           "500": {
             "description": "Internal Server Error. Something went wrong on the server side."
@@ -227,6 +204,13 @@
                           "title": {
                             "type": "string",
                             "description": "The title of the search result."
+                          },
+                          "risk_factors": {
+                            "type": "array",
+                            "description": "The risk factors of the search result.",
+                            "items": {
+                              "type": "string"
+                            }
                           }
                         }
                       }
@@ -248,6 +232,36 @@
           },
           "429": {
             "description": "Too Many Requests. Rate limit exceeded."
+          },
+          "500": {
+            "description": "Internal Server Error. Something went wrong on the server side."
+          }
+        }
+      }
+    },
+    "/api/languages": {
+      "get": {
+        "summary": "get supported languages",
+        "description": "This endpoint returns the list of supported languages for dorki.io.\n",
+        "responses": {
+          "200": {
+            "description": "OK. Returns the list of supported languages.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "languages": {
+                      "type": "array",
+                      "description": "The list of supported languages.",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error. Something went wrong on the server side."
@@ -303,6 +317,150 @@
             "description": "Internal Server Error. Something went wrong on the server side."
           }
         }
+      }
+    },
+    "/api/download": {
+      "get": {
+        "summary": "get download results",
+        "description": "This endpoint allows authenticated users to search files or execute queries and retrieve results.\nIt performs searches based on the provided file name or query, and can return results in different formats.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "description": "The search query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "description": "Additional search criteria.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "file",
+            "description": "The name of the file to search.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "format",
+            "description": "The format of the search results (json or txt).",
+            "schema": {
+              "type": "string",
+              "enum": ["json", "txt"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. Returns the search results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "description": "The search results.",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "integer",
+                            "description": "The identifier of the search result."
+                          },
+                          "url": {
+                            "type": "string",
+                            "description": "The URL of the search result."
+                          },
+                          "engine": {
+                            "type": "string",
+                            "description": "The search engine used."
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "The title of the search result."
+                          },
+                          "risk_factors": {
+                            "type": "array",
+                            "description": "The risk factors of the search result.",
+                            "items": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "count": {
+                      "type": "integer",
+                      "description": "The count of search results."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Missing query."
+          },
+          "401": {
+            "description": "Unauthorized. User is not authenticated."
+          },
+          "429": {
+            "description": "Too Many Requests. Rate limit exceeded."
+          },
+          "500": {
+            "description": "Internal Server Error. Something went wrong on the server side."
+          }
+        }
+      }
+    },
+    "/api/extract": {
+      "get": {
+        "summary": "get extract data",
+        "description": "This endpoint allows authenticated users to extract information from search results such as domains, paths or the parameters from the URLs.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "q",
+            "description": "The search query.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "search",
+            "description": "Additional search criteria.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "file",
+            "description": "The name of the file to search.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "description": "The type of information to extract it can be one of the following domains, paths or parameters",
+            "schema": {
+              "type": "string",
+              "enum": ["domains", "paths", "parameters"]
+            }
+          }
+        ]
       }
     }
   },
