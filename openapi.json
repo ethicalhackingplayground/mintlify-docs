@@ -121,10 +121,7 @@
                           },
                           "risk_factors": {
                             "type": "array",
-                            "description": "The risk factors of the search result.",
-                            "items": {
-                              "type": "string"
-                            }
+                            "description": "The risk factors of the search result."
                           }
                         }
                       }
@@ -207,10 +204,7 @@
                           },
                           "risk_factors": {
                             "type": "array",
-                            "description": "The risk factors of the search result.",
-                            "items": {
-                              "type": "string"
-                            }
+                            "description": "The risk factors of the search result."
                           }
                         }
                       }
@@ -390,10 +384,7 @@
                           },
                           "risk_factors": {
                             "type": "array",
-                            "description": "The risk factors of the search result.",
-                            "items": {
-                              "type": "string"
-                            }
+                            "description": "The risk factors of the search result."
                           }
                         }
                       }
@@ -451,6 +442,7 @@
               "type": "string"
             }
           },
+
           {
             "in": "query",
             "name": "type",
@@ -460,7 +452,37 @@
               "enum": ["domains", "paths", "parameters"]
             }
           }
-        ]
+        ],
+        "responses": {
+          "200": {
+            "description": "OK. Returns the search results.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "properties": {
+                    "results": {
+                      "type": "array",
+                      "description": "The search results."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request. Missing query."
+          },
+          "401": {
+            "description": "Unauthorized. User is not authenticated."
+          },
+          "429": {
+            "description": "Too Many Requests. Rate limit exceeded."
+          },
+          "500": {
+            "description": "Internal Server Error. Something went wrong on the server side."
+          }
+        }
       }
     }
   },
